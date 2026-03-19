@@ -1,0 +1,48 @@
+#!/bin/bash
+
+echo "🧠 AI LAB STATUS"
+echo "=============================="
+echo
+
+echo "📍 Host:"
+hostname
+uptime
+echo
+
+echo "💾 Storage:"
+df -h / /lab 2>/dev/null
+echo
+
+echo "🐳 Docker:"
+if command -v docker >/dev/null 2>&1; then
+  docker ps --format "table {{.Names}}\t{{.Status}}\t{{.Ports}}"
+else
+  echo "docker not installed"
+fi
+echo
+
+echo "🖥️ VMs:"
+if command -v VBoxManage >/dev/null 2>&1; then
+  VBoxManage list runningvms 2>/dev/null || echo "No running VirtualBox VMs"
+elif command -v virsh >/dev/null 2>&1; then
+  virsh list --all 2>/dev/null || echo "No libvirt VMs found"
+else
+  echo "No VM manager detected"
+fi
+echo
+
+echo "🤖 GPU:"
+if command -v nvidia-smi >/dev/null 2>&1; then
+  nvidia-smi --query-gpu=name,utilization.gpu,memory.used,memory.total --format=csv,noheader
+else
+  echo "No NVIDIA tools available"
+fi
+echo
+
+echo "🌐 Listening services:"
+ss -tuln | grep LISTEN | head -n 20
+echo
+
+echo "🧪 LLM endpoints:"
+curl -fsS http://127.0.0.1:11434/api/tags >/dev/null 2>&1 && echo "Ollama: ✅ UP" || echo "Ollama: ❌ DOWN"
+curl -fsS http://127.0.0.1:8000/v1/models >/dev/null 2>&1 && echo "OpenAI-style API: ✅ UP" || echo "OpenAI-style API: ❌ DOWN"

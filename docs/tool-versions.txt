@@ -1,0 +1,6 @@
+git: git version 2.53.0
+ssh: OpenSSH_10.2p1, OpenSSL 3.6.1 27 Jan 2026
+zsh: zsh 5.9 (x86_64-pc-linux-gnu)
+tmux: tmux 3.6a
+docker: Docker version 29.3.0, build 5927d80c76
+ollama: ollama version is 0.18.0

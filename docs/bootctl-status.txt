@@ -1,0 +1,51 @@
+System:
+      Firmware: n/a (n/a)
+ Firmware Arch: x64
+   Secure Boot: disabled
+  TPM2 Support: yes
+  Measured UKI: no
+  Boot into FW: supported
+
+Current Boot Loader:
+       Product: GRUB 2.14
+     Features: ✗ Boot counting
+               ✗ Menu timeout control
+               ✗ One-shot menu timeout control
+               ✗ Default entry control
+               ✗ One-shot entry control
+               ✗ Support for XBOOTLDR partition
+               ✗ Support for passing random seed to OS
+               ✗ Load drop-in drivers
+               ✗ Support Type #1 sort-key field
+               ✗ Support @saved pseudo-entry
+               ✗ Support Type #1 devicetree field
+               ✗ Enroll SecureBoot keys
+               ✗ Retain SHIM protocols
+               ✗ Menu can be disabled
+               ✗ Multi-Profile UKIs are supported
+               ✗ Loader reports network boot URL
+               ✗ Support Type #1 uki field
+               ✗ Support Type #1 uki-url field
+               ✗ Loader reports active TPM2 PCR banks
+     Partition: /dev/disk/by-partuuid/ab0453c9-2f2f-4868-b51f-0f75bf171d4d
+
+Random Seed:
+ System Token: set
+       Exists: no
+
+Available Boot Loaders on ESP:
+          ESP: /boot (/dev/disk/by-partuuid/ab0453c9-2f2f-4868-b51f-0f75bf171d4d)
+
+Boot Loaders Listed in EFI Variables:
+        Title: GRUB
+           ID: 0x0002
+       Status: active, boot-order
+    Partition: /dev/disk/by-partuuid/ab0453c9-2f2f-4868-b51f-0f75bf171d4d
+         File: └─/boot//EFI/GRUB/grubx64.efi
+
+Boot Loader Entry Locations:
+          ESP: /boot (/dev/disk/by-partuuid/ab0453c9-2f2f-4868-b51f-0f75bf171d4d, $BOOT)
+       config: /boot//loader/loader.conf: No such file or directory
+        token: arch
+
+0 entries, no entry could be determined as default.

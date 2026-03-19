@@ -1,0 +1,36 @@
+#!/bin/bash
+
+SESSION="lab"
+
+# Make sure tmux exists
+command -v tmux >/dev/null 2>&1 || {
+  echo "tmux is not installed"
+  exit 1
+}
+
+# Create session if it doesn't exist
+if ! tmux has-session -t "$SESSION" 2>/dev/null; then
+  echo "🚀 Starting AI Lab Control Panel..."
+
+  tmux new-session -d -s "$SESSION"
+
+  # Pane 1 - system
+  tmux send-keys -t "$SESSION:0.0" "btop" C-m
+
+  # Pane 2 - docker
+  tmux split-window -h -t "$SESSION:0.0"
+  tmux send-keys -t "$SESSION:0.1" "docker stats" C-m
+
+  # Pane 3 - GPU
+  tmux split-window -v -t "$SESSION:0.1"
+  tmux send-keys -t "$SESSION:0.2" "nvtop || watch -n1 nvidia-smi" C-m
+
+  # Pane 4 - VM + services
+  tmux select-pane -t "$SESSION:0.0"
+  tmux split-window -v -t "$SESSION:0.0"
+  tmux send-keys -t "$SESSION:0.3" "$HOME/bin/lab-status" C-m
+
+  tmux select-layout -t "$SESSION" tiled
+fi
+
+tmux attach -t "$SESSION"

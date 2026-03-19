@@ -1,0 +1,24 @@
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host noprefixroute 
+       valid_lft forever preferred_lft forever
+2: enp3s0f1: <NO-CARRIER,BROADCAST,MULTICAST,UP> mtu 1500 qdisc fq_codel state DOWN group default qlen 1000
+    link/ether 98:28:a6:00:93:1d brd ff:ff:ff:ff:ff:ff
+    altname enx9828a600931d
+3: wlp2s0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue state UP group default qlen 1000
+    link/ether 98:22:ef:ad:80:83 brd ff:ff:ff:ff:ff:ff
+    altname wlx9822efad8083
+    inet 10.42.149.89/24 brd 10.42.149.255 scope global dynamic noprefixroute wlp2s0
+       valid_lft 3311sec preferred_lft 3311sec
+    inet6 fe80::babe:8e8b:f50f:e3b6/64 scope link noprefixroute 
+       valid_lft forever preferred_lft forever
+4: br-221be702c924: <NO-CARRIER,BROADCAST,MULTICAST,UP> mtu 1500 qdisc noqueue state DOWN group default 
+    link/ether 4e:9d:d7:f8:8c:6a brd ff:ff:ff:ff:ff:ff
+    inet 172.18.0.1/16 brd 172.18.255.255 scope global br-221be702c924
+       valid_lft forever preferred_lft forever
+5: docker0: <NO-CARRIER,BROADCAST,MULTICAST,UP> mtu 1500 qdisc noqueue state DOWN group default 
+    link/ether 8a:2a:06:4d:fb:a0 brd ff:ff:ff:ff:ff:ff
+    inet 172.17.0.1/16 brd 172.17.255.255 scope global docker0
+       valid_lft forever preferred_lft forever
