@@ -8,4 +8,4 @@ tmpfs            16G   12K   16G   1% /tmp
 none            1.0M     0  1.0M   0% /run/credentials/systemd-journald.service
 /dev/sda3       135G   10G  118G   8% /lab
 /dev/sda1      1022M  155M  868M  16% /boot
-tmpfs           3.2G   84K  3.2G   1% /run/user/1000
+tmpfs           3.2G   88K  3.2G   1% /run/user/1000
