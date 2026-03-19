@@ -32,37 +32,22 @@ alias promptedit='nano ~/.config/zsh/prompt.zsh'
 # ---- NEW CONSOLE (SMART SPAWN) ----
 ####################################
 
-newconsole() {
-  echo "🪟 Opening new console..."
+# ---- KGX TERMINAL ----
+alias newconsole='kgx & disown'
 
-  if command -v gnome-terminal >/dev/null 2>&1; then
-    gnome-terminal & disown
-  elif command -v kgx >/dev/null 2>&1; then
-    kgx & disown
-  elif command -v kitty >/dev/null 2>&1; then
-    kitty & disown
-  elif command -v alacritty >/dev/null 2>&1; then
-    alacritty & disown
-  else
-    echo "❌ No supported terminal found."
-  fi
+killconsole() {
+  echo "💀 Killing KGX terminals..."
+  pkill -f kgx 2>/dev/null || echo "No KGX processes found."
 }
 
 
-newconsolewkill() {
-  echo "💀 Killing terminal processes..."
+# ---- KITTY TERMINAL ----
+alias newkitty='kitty & disown'
 
-  pkill -f gnome-terminal 2>/dev/null || true
-  pkill -f kitty 2>/dev/null || true
-  pkill -f alacritty 2>/dev/null || true
-  pkill -f kgx 2>/dev/null || true
-
-  sleep 1
-
-  echo "🌱 Spawning fresh console..."
-  newconsole
+killkitty() {
+  echo "💀 Killing kitty terminals..."
+  pkill -f kitty 2>/dev/null || echo "No kitty processes found."
 }
-
 
 # ==========================
 # ---- TERMINAL CONTROL ----

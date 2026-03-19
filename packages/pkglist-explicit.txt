@@ -58,6 +58,7 @@ gvfs-smb
 gvfs-wsdd
 htop
 jq
+kitty
 libvirt
 linux
 linux-firmware

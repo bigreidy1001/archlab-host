@@ -2,7 +2,7 @@
        Icon name: computer-laptop
          Chassis: laptop 💻
       Machine ID: c9c654925432484a9bc875fbc06c1a49
-         Boot ID: 14421658bc5a4759a2ea63d874c48c7f
+         Boot ID: 61a7c7ea94ae4412b2221f37d534a9e6
 Operating System: Arch Linux
           Kernel: Linux 6.19.8-arch1-1
     Architecture: x86-64
