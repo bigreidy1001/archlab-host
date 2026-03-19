@@ -33,9 +33,9 @@ alias promptedit='nano ~/.config/zsh/prompt.zsh'
 ####################################
 
 # ---- KGX TERMINAL ----
-alias newconsole='kgx & disown'
+alias newshell='kgx & disown'
 
-killconsole() {
+killshell() {
   echo "💀 Killing KGX terminals..."
   pkill -f kgx 2>/dev/null || echo "No KGX processes found."
 }
